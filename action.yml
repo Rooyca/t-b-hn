@@ -1,7 +1,7 @@
 name: "Url request with simple auth"
 description: "Check the status code and response from your urls"
-icon: "user-check"
-color: "gray-dark"
+icon: user-check
+color: gray-dark
 author: "rooyca"
 inputs:
   URL:
