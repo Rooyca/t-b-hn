@@ -5,8 +5,6 @@
 
 This is a GitHub action that allows you to check the status of a url with authentication. For now is just a post request, although in the future the idea is to add the option to select different methods.
 
-In `main.py` you will find a small example of accessing Action inputs and returning Action outputs. For more information on communicating with the workflow see the [development tools for GitHub Actions](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/development-tools-for-github-actions).
-
 ## Usage
 
 ### Example workflow
