@@ -1,13 +1,16 @@
 import os
-import requests  # noqa We are just importing this to prove the dependency installed correctly
+import requests
 
 
 def main():
-    my_input = os.environ["INPUT_MYINPUT"]
+    url = os.environ["INPUT_URL"]
+    user = os.environ["INPUT_USER"]
+    passw = os.environ["INPUT_PASSW"]
 
-    my_output = f"Hello {my_input}"
+    response = requests.post(url, auth=(user, passw))
 
-    print(f"::set-output name=myOutput::{my_output}")
+    print(f"::set-output name=Status::{response.status_code}")
+    print(f"::set-output name=Response::{response.text}")
 
 
 if __name__ == "__main__":

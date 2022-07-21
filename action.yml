@@ -2,12 +2,20 @@ name: "Python Container Action Template"
 description: "Get started with Python Container actions"
 author: "Jacob Tomlinson"
 inputs:
-  myInput:
-    description: "Input to use"
-    default: "world"
+  URL:
+    description: "URL to use in request"
+    default: "None"
+  USER:
+    description: "Username to authenticate your request"
+    default: "None"
+  PASSW:
+    description: "Password to authenticate your request"
+    default: "None"
 outputs:
-  myOutput:
+  Response:
     description: "Output from the action"
+  Status:
+    description: "Status code from request"
 runs:
   using: "docker"
   image: "Dockerfile"
