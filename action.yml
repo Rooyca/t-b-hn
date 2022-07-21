@@ -1,5 +1,5 @@
-name: "Python Container Action Template"
-description: "Get started with Python Container actions"
+name: "Url request with simple auth"
+description: "Check the status code and response from your urls"
 author: "Jacob Tomlinson"
 inputs:
   URL:
