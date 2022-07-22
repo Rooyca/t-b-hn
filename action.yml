@@ -1,21 +1,29 @@
 name: "Url request with simple auth"
 description: "Check the status code and response from your urls"
-icon: user-check
-color: gray-dark
+
 author: "rooyca"
 inputs:
   URL:
     description: "URL to use in request"
+    required: true
     default: "None"
+  METHOD:
+    description: "Method to use in request (GET, POST, PUT or DELETE)"
+    required: true
+    default: "GET"
+  AUTH:
+    description: "Use authentication (true or false)"
+    required: true
+    default: false
   USER:
-    description: "Username to authenticate your request"
-    default: "None"
+    description: "Username to authenticate with"
+    required: false
   PASSW:
-    description: "Password to authenticate your request"
-    default: "None"
+    description: "Password to authenticate with"
+    required: false
 outputs:
   Response:
-    description: "Output from the action"
+    description: "Response from request"
   Status:
     description: "Status code from request"
 runs:
