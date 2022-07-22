@@ -7,28 +7,6 @@ This is a GitHub action that allows you to check the status of a url with authen
 
 ## Usage
 
-### Example workflow
-
-```yaml
-name: My Workflow
-on: [push, pull_request]
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@master
-    - name: Run action
-
-      # Put your action repo here
-      uses: rooyca/url-check-with-AUTH@master
-
-      # Put an example of your mandatory inputs here
-      with:
-        URL: http://example.com
-        USER: username
-        PASSW: password
-```
-
 ### Inputs
 
 | Input                                             | Description                                        |
@@ -44,8 +22,40 @@ jobs:
 | `Status`  | Code status from request (returns 200)    |
 | `Response`  | Result of request (returns 'Everything is ok!')    |
 
+
+### Example workflow
+
+```yaml
+name: My WF
+on:
+  schedule:
+    # Runs every six hour
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Run action
+      id: myaction
+
+      uses: rooyca/t-b-hn@master
+
+      with:
+        URL: ${{ secrets.URL }}
+        METHOD: "POST"
+        AUTH: true
+        USER: ${{ secrets.USER }}
+        PASSW: ${{ secrets.PASSW }}
+    - name: Check outputs
+      run: |
+        echo "Results - ${{ steps.myaction.outputs.Response }}" &&
+        echo "Code - ${{ steps.myaction.outputs.Status }}"
+```
+
 ## Development v1.2
 
-- [ ] Add methods
+- [x] Add methods
 - [ ] Add multiple url
-- [ ] Add option to request without Auth
+- [x] Add option to request without Auth
