@@ -12,6 +12,8 @@ This is a GitHub action that allows you to check the status of a url with authen
 | Input                                             | Description                                        |
 |------------------------------------------------------|-----------------------------------------------|
 | `URL`  | The url to which the request is to be made     |
+| `METHOD`| Method of request (GET, POST, PUT or DELETE |
+| `AUTH`| Use authentication (true or false) |
 | `USER`   | Username for authentication    |
 | `PASSW`   | Password for authentication    |
 
